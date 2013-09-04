@@ -1,0 +1,31 @@
+/*! highlight.js 0.1.0
+ * (c) 2012-2013 Jony Zhang <zj86@live.cn>, MIT Licensed
+ * https://github.com/niceue/highlight.js/
+ */
+pre code.highlight{margin:0;padding:0;border:0;background:none}
+.highlight table{width:100%;border:1px solid #ccc;background:#fff}
+.highlight .code-wrap{border:2px solid #eee;overflow-x:auto;color:#333;font-family:Consolas,"Liberation Mono",Courier,monospace;_font-family:monospace;font-size:12px;line-height:18px;vertical-align:bottom}
+.highlight .line-nums{width:1%;text-align:right;vertical-align:top;padding:5px 0;color:#bbb;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;user-select:none;}
+.highlight .line-nums span{display:block;padding:0 8px;cursor:default}
+.highlight .line-code{border-left:1px solid #e5e5e5;padding:5px 0;vertical-align:top;}
+.highlight .line-code div{padding-left:10px;white-space:pre}
+.lang-js .comment{color:#008000}
+.lang-js .string{color:#808080}
+.lang-js .number{color:#d14}
+.lang-js .keywords{font-weight:700}
+.lang-js .regex{color:#8000ff}
+.lang-js .global{color:#0086b3}
+.lang-js .brackets{color:#000080}
+.lang-html .comment{color:#998;font-style:italic}
+.lang-html .doctype{color:#008080}
+.lang-html .tag{color:#881280}
+.lang-html .attribute{color:#008080}
+.lang-html .data{color:#d14}
+.lang-html .string{color:#888}
+.lang-css .comment{color:#008000}
+.lang-css .properties{color:#008080}
+.lang-css .selectors{color:#800000}
+.lang-css .units{color:#f00}
+.lang-css .urls{color:#f0f}
+.lang-css .colors{color:#808000}
+.lang-css .important{color:#00f}
