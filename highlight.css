@@ -4,6 +4,7 @@
  */
 pre code.highlight{margin:0;padding:0;border:0;background:none}
 .highlight table{width:100%;border:1px solid #ccc;background:#fff}
+.highlight div{min-height:18px;_height:18px}
 .highlight .code-wrap{border:2px solid #eee;overflow-x:auto;color:#333;font-family:Consolas,"Liberation Mono",Courier,monospace;_font-family:monospace;font-size:12px;line-height:18px;vertical-align:bottom}
 .highlight .line-nums{width:1%;text-align:right;vertical-align:top;padding:5px 0;color:#bbb;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;user-select:none;}
 .highlight .line-nums span{display:block;padding:0 8px;cursor:default}
