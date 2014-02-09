@@ -19,27 +19,30 @@
 
     //添加高亮语法
     highlight.add = function(lang, rules) {
-        var exp, rule;
-
-        ruleSet[lang] = [];
-        ruleSet[lang].toString = joinExp;
+        var exp, rule, arr = [];
+        arr.toString = joinExp;
 
         for (var className in rules) {
             rule = rules[className];
             exp = (typeof rule.exp !== "string") ? String(rule.exp).substr(1, String(rule.exp).length-2) : rule.exp;
 
-            ruleSet[lang].push({
+            arr.push({
                 className : className,
                 exp : "(" + exp + ")",
                 length : (exp.match(/(^|[^\\])\([^?]/g) || "").length + 1, // number of subexps in rule
                 replacement : rule.replacement || null
             });
         }
+
+        var a = lang.split(' '), i = a.length;
+        while (i--) {
+            ruleSet[ a[i] ] = arr;
+        }
     };
 
     function highlightElements(dom) {
         if (!dom.getElementsByTagName) return;
-        var langRe = /\s?lang-([a-z]+)\s?/;
+        var langRe = /\s?lang(?:uage)?-([a-z]+)\s?/;
         loopEls(dom.getElementsByTagName("pre"));
         loopEls(dom.getElementsByTagName("code"));
         function loopEls(els){
@@ -50,6 +53,7 @@
                 lang = langRe.exec(el.className);
                 if (!lang) continue;
                 lang = lang[1];
+                if (!ruleSet[lang]) continue;
                 el.innerHTML = parse(el.innerHTML, lang);
                 el.setAttribute('data-highlight', 1);
             }
@@ -100,7 +104,7 @@
 })(this);
 
 
-highlight.add("html", {
+highlight.add("html xml", {
     comment : {
         exp: /&lt;!\s*(--([^\-]|[\r\n]|-[^\-])*--\s*)&gt;/
     },
@@ -122,7 +126,7 @@ highlight.add("html", {
         exp: /&lt;!DOCTYPE([^&]|&[^g]|&g[^t])*&gt;/
     }
 });
-highlight.add("js",{
+highlight.add("js javascript json",{
     comment : {
         exp  : /(\/\/[^\n]*(\n|$))|(\/\*[^*]*\*+([^\/][^*]*\*+)*\/)/
     },
